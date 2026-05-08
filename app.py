@@ -1,7 +1,7 @@
 import streamlit as st
 from pathlib import Path
-from langchain.agents import create_sql_agent
-from langchain.sql_database import SQLDatabase
+#from langchain.agents import create_sql_agent
+#from langchain.sql_database import SQLDatabase
 from langchain.agents.agent_types import AgentType
 from langchain.agents.agent_toolkits import SQLDatabaseToolkit
 import mysql.connector
@@ -10,6 +10,8 @@ from langchain_groq import ChatGroq
 from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
 from sqlalchemy import create_engine
 import os
+from langchain_community.utilities import SQLDatabase
+from langchain.agents import create_sql_agent
 
 
 st.set_page_config(page_title="Langchain: Chat with SQL DB",page_icon="⚠️")
