@@ -43,7 +43,7 @@ if not api_key:
 
 ## LLM model
 
-llm=ChatGroq(api_key=api_key,model="llama-3.3-70b-versatile",streaming=True)
+llm=ChatGroq(api_key=api_key,model=""llama3-70b-8192"",streaming=True)
 
 @st.cache_resource(ttl="2h")
 def configure_db(db_url, mysql_host=None, mysql_user=None, mysql_password=None, mysql_db=None):
