@@ -32,18 +32,21 @@ if radio_opt.index(selected_opt)==1:
 else:
     db_url=LOCALDB
 
-api_key=st.sidebar.text_input(label="GROQ API Key",type="password")
-os.environ["GROQ_API_KEY"] = api_key
+api_key = st.sidebar.text_input(
+    "GROQ API Key",
+    type="password"
+)
 
-if not db_url:
-    st.info("please provide database info")
 if not api_key:
-    st.info("please add the groq api key")
+    st.info("Please add Groq API key")
+    st.stop()
 
 
-## LLM model
-
-llm=ChatGroq(api_key=api_key,model=""llama3-70b-8192"",streaming=True)
+llm = ChatGroq(
+    groq_api_key=api_key,
+    model_name="llama-3.3-70b-versatile",
+    streaming=True
+)
 
 @st.cache_resource(ttl="2h")
 def configure_db(db_url, mysql_host=None, mysql_user=None, mysql_password=None, mysql_db=None):
