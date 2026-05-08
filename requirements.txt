@@ -3,6 +3,7 @@ langchain-community==0.0.38
 langchain-core==0.1.52
 langchain-groq
 sqlalchemy
+pydantic==2.7.4
 streamlit
 mysql-connector-python
 python-dotenv
